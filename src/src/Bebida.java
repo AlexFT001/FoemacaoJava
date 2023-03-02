@@ -16,6 +16,9 @@ public class Bebida {
         numeroInicial++;
 
     }
+    public int getStock() {
+        return stock;
+    }
 
     public double getPreco() {
         return preco;
