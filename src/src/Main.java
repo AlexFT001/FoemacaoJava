@@ -22,8 +22,24 @@ public class Main {
 
         do{
             opcao = menu();
-            if(opcao == 1){
-                IniciarOperacao.inicioOperacao(maquina);
+            switch (opcao){
+                case 1:
+                    IniciarOperacao.inicioOperacao(maquina);
+                    break;
+                case 2:
+                    break;
+                default:
+                    maquina.resetarMaquina();
+
+                    maquina.addBebidas(cocaCola);
+                    maquina.addBebidas(pepsi);
+                    maquina.addBebidas(iceTea);
+
+                    maquina.addMoedas(cinco);
+                    maquina.addMoedas(dez);
+                    maquina.addMoedas(vinte);
+                    maquina.addMoedas(cinquenta);
+                    break;
             }
         }while (opcao != 2);
 
@@ -35,7 +51,7 @@ public class Main {
         System.out.println("Deseja realizar uma compra?");
         System.out.println("1.Sim");
         System.out.println("2.Não");
-        return Leitor.lerInteiro(1,2,"Escolha a Opção: ", "O número tem de estar entre 1 e 2");
+        return Leitor.lerInteiro(1,5,"Escolha a Opção: ", "O número tem de estar entre 1 e 2");
 
     }
 }
